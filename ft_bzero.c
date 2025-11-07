@@ -8,7 +8,7 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 	{	
-		((char *)s)[i] = 0;
+		((unsigned char *)s)[i] = 0;
 		i++;
 	}
 }
@@ -17,8 +17,8 @@ int	main(void)
 {
 	char dest[] = "GeeksForGeeks is for programming geeks.";
 	char dest1[] = "GeeksForGeeks is for programming geeks.";
-	ft_bzero(dest, 8*sizeof(char));
+	ft_bzero(dest, 8);
 	printf("%s\n", dest);
-	bzero(dest1, 8*sizeof(char));
+	bzero(dest1, 8);
 	printf("%s\n", dest1);
 }
