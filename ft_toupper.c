@@ -1,6 +1,14 @@
-#include <ctype.h>
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/10 16:53:10 by ltourbe           #+#    #+#             */
+/*   Updated: 2025/11/10 18:32:07 by ltourbe          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
@@ -10,10 +18,4 @@ int	ft_toupper(int c)
 	if (i >= 'a' && i <= 'z')
 		return (i - 32);
 	return (i);
-}
-
-int	main(void)
-{
-	printf("%c\n", ft_toupper('c'));
-	printf("%c\n", toupper('c'));
 }

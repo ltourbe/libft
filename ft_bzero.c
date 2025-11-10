@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/10 16:09:55 by ltourbe           #+#    #+#             */
+/*   Updated: 2025/11/10 16:09:58 by ltourbe          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string.h>
 #include <stdio.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -11,14 +24,4 @@ void	ft_bzero(void *s, size_t n)
 		((unsigned char *)s)[i] = 0;
 		i++;
 	}
-}
-
-int	main(void)
-{
-	char dest[] = "GeeksForGeeks is for programming geeks.";
-	char dest1[] = "GeeksForGeeks is for programming geeks.";
-	ft_bzero(dest, 8);
-	printf("%s\n", dest);
-	bzero(dest1, 8);
-	printf("%s\n", dest1);
 }

@@ -1,5 +1,16 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/10 15:54:30 by ltourbe           #+#    #+#             */
+/*   Updated: 2025/11/10 18:34:02 by ltourbe          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -12,14 +23,4 @@ void	*ft_memset(void *b, int c, size_t len)
 		i++;
 	}
 	return (b);
-}
-
-int	main(void)
-{
-	char dest[] = "GeeksForGeeks is for programming geeks.";
-	char dest1[] = "GeeksForGeeks is for programming geeks.";
-	ft_memset(dest + 13, '.', 8);
-	printf("%s\n", dest);
-	memset(dest1 + 13, '.', 8);
-	printf("%s\n", dest1);
 }

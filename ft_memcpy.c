@@ -1,5 +1,16 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/10 16:18:15 by ltourbe           #+#    #+#             */
+/*   Updated: 2025/11/10 18:29:40 by ltourbe          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -9,17 +20,4 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		n--;
 	}
 	return (dest);
-}
-
-int	main(void)
-{
-	char source[] = "This is the source string";
-	char target[] = "This is the target string";
-	char source1[] = "This is the source string";
-	char target1[] = "This is the target string";
-
-	ft_memcpy(target, source, strlen(source));
-	printf("%s\n", target);
-	memcpy(target1, source1, strlen(source));
-	printf("%s\n", target1);
 }

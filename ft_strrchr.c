@@ -1,5 +1,16 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/10 16:45:12 by ltourbe           #+#    #+#             */
+/*   Updated: 2025/11/10 18:36:51 by ltourbe          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -16,10 +27,3 @@ char	*ft_strrchr(const char *s, int c)
                         return ((char *)&s[i]);
 	return (NULL);
 }
-
-int	main(int ac, char **av)
-{
-	(void) ac;
-	printf("%s\n", ft_strrchr(av[1], 's'));
-	printf("%s\n", strrchr(av[1], 's'));
-} 

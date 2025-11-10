@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/10 16:49:34 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/10 18:31:45 by ltourbe          ###   ########.fr       */
+/*   Created: 2025/11/04 14:34:55 by ltourbe           #+#    #+#             */
+/*   Updated: 2025/11/04 16:54:26 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
-{
-	unsigned char	i;
+//#include <stdio.h>
 
-	i = c;
-	if (i >= 'A' && i <= 'Z')
-		return (i + 32);
-	return (i);
+int	ft_isascii(int c)
+{
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
+
+/*int	main(int ac, char **av)
+{
+	int	i;
+	i = 0;
+	if (ac == 2)
+	{
+		while (av[1][i] != '\0')
+		{
+			printf("%d\n", ft_isascii(av[1][i]));
+			i++;
+		}
+	}
+	return (0);
+}*/
