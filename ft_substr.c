@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/10 16:45:12 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/10 19:53:02 by ltourbe          ###   ########.fr       */
+/*   Created: 2025/11/10 18:43:30 by ltourbe           #+#    #+#             */
+/*   Updated: 2025/11/10 19:02:39 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	char			*sub;
+	unsigned int	i;
+	unsigned int	total;
 
-	i = ft_strlen(s);
-	while (i != 0)
+	total = ft_strlen(s) - len;
+	sub = malloc(total * sizeof(char));
+	if (sub == NULL)
+		return (NULL);
+	i = 0;
+	while (s[start] != '\0' && i < len)
 	{
-		if (s[i] == (char) c)
-			return ((char *)&s[i]);
-		i--;
+		sub[i] = s[start];
+		i++;
+		start++;
 	}
-	if (s[i] == (char) c)
-		return ((char *)&s[i]);
-	return (NULL);
+	return (sub);
 }

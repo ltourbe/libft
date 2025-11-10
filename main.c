@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:56:48 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/10 18:28:42 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/10 20:31:11 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -262,11 +262,29 @@ void    test_toupper(void)
         printf("%c\n", toupper('c'));
 }
 
-void     test_strnstr(int ac, char **av)
+void    test_strnstr(int ac, char **av)
 {
         (void) ac;
         printf("%s\n", strnstr(av[1], av[2], 7));
         printf("%s\n", ft_strnstr(av[1], av[2], 7));
+}
+
+void	test_substr(void)
+{
+        char s[] = "Bonjour";
+        printf("%s\n", ft_substr(s, 3, 10));
+}
+
+void     test_strjoin(int ac, char **av)
+{
+        (void) ac;
+        printf("%s\n", ft_strjoin(av[1], av[2]));
+}
+
+void	test_strtrim(int ac, char **av)
+{
+        (void) ac; 
+        printf("%s\n", ft_strtrim(av[1], av[2]));
 }
 
 int	main(int ac, char **av)
@@ -295,4 +313,7 @@ int	main(int ac, char **av)
 	test_tolower();
 	test_toupper();
 	test_strnstr(ac, av);
+	test_substr();
+	test_strjoin(ac, av);
+	test_strtrim(ac, av);
 }

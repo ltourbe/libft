@@ -6,7 +6,7 @@
 #    By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/05 16:43:54 by ltourbe           #+#    #+#              #
-#    Updated: 2025/11/10 17:13:41 by ltourbe          ###   ########.fr        #
+#    Updated: 2025/11/10 20:27:32 by ltourbe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,10 @@ SRCS		= ft_isascii.c \
 		  ft_strrchr.c \
 		  ft_tolower.c \
 		  ft_toupper.c \
-		  ft_strnstr.c
+		  ft_strnstr.c \
+		  ft_substr.c \
+		  ft_strjoin.c \
+		  ft_strtrim.c
 
 OBJS		= $(patsubst %.c, %.o, $(SRCS))
 
