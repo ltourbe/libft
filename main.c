@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:56:48 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/11 15:03:04 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/11 17:42:09 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -308,6 +308,46 @@ void	test_itoa(int ac, char **av)
         printf("%s\n", ft_itoa(atoi(av[1])));
 }
 
+void	test_strmapi(int ac, char **av)
+{
+        char    *str;
+
+        (void) ac;
+        str = ft_strmapi(av[1], *to_upper);
+        printf("%s\n", str);
+}
+
+void	test_striteri(int ac, char **av)
+{
+        (void) ac;
+        ft_striteri(av[1], to_upper);
+        printf("%s\n", av[1]);
+}
+
+void     test_putchar_fd(int ac, char **av)
+{
+        (void) ac;
+        ft_putchar_fd(*av[1], atoi(av[2]));
+}
+
+void     test_putstr_fd(int ac, char **av)
+{
+        (void) ac;
+        ft_putstr_fd(av[1], atoi(av[2]));
+}
+
+void     test_putendl_fd(int ac, char **av)
+{
+        (void) ac; 
+        ft_putendl_fd(av[1], atoi(av[2]));
+}
+
+void	test_putnbr_fd(int ac, char **av)
+{
+        (void) ac;
+        ft_putnbr_fd(atoi(av[1]), atoi(av[2]));
+}
+
 int	main(int ac, char **av)
 {
 	(void) ac;
@@ -339,4 +379,10 @@ int	main(int ac, char **av)
 	test_strtrim(ac, av);
 	test_split(ac, av);
 	test_itoa(ac, av);
+	test_strmapi(ac, av);
+	test_striteri(ac, av);
+	test_putchar_fd(ac, av);
+	test_putstr_fd(ac, av);
+	test_putendl_fd(ac, av);
+	test_putnbr_fd(ac, av);
 }
