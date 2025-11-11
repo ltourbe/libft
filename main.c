@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:56:48 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/10 20:31:11 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/11 15:03:04 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -287,6 +287,27 @@ void	test_strtrim(int ac, char **av)
         printf("%s\n", ft_strtrim(av[1], av[2]));
 }
 
+void	test_split(int ac, char **av)
+{
+        char    **result;
+        int     i;  
+
+        (void) ac; 
+        result = ft_split(av[1], *av[2]);
+        i = 0;
+        while (result[i])
+        {
+                printf("%s\n", result[i]);
+                i++;
+        }
+}
+
+void	test_itoa(int ac, char **av)
+{
+        (void) ac; 
+        printf("%s\n", ft_itoa(atoi(av[1])));
+}
+
 int	main(int ac, char **av)
 {
 	(void) ac;
@@ -316,4 +337,6 @@ int	main(int ac, char **av)
 	test_substr();
 	test_strjoin(ac, av);
 	test_strtrim(ac, av);
+	test_split(ac, av);
+	test_itoa(ac, av);
 }

@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:55:16 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/10 20:26:43 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/11 15:03:32 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 char    *ft_substr(char const *s, unsigned int start, size_t len);
 char    *ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char    **ft_split(char const *s, char c);
+char    *ft_itoa(int n);
 
 #endif
