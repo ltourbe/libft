@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:42:29 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/10 18:12:32 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/11 19:31:59 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_space(char c)
 		return (0);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;

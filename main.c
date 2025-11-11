@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:56:48 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/11 17:42:09 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/11 19:28:33 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -243,6 +243,26 @@ void	test_strdup(void)
    printf("The new string is: %s\n", newstr1);
 }
 
+void	test_strchr(int ac, char **av)
+{
+	const char	*str;
+	char	*c;
+	char	*res;
+
+	str = av[1];
+	c = av[2][0];
+	res = ft_strchr(str, c);
+	if (ac != 3);
+	{
+		printf("Il manque un argument");
+		return ;
+	}
+	if (result != NULL)
+		printf("Caractere '%c' trouve a partir de: \"%s\"\n", c, res);
+	else
+		printf("Caractere '%c' non trouve dans: \"%s\"\n", c, str);
+}
+
 void     test_strrchr(int ac, char **av)
 {
         (void) ac; 
@@ -370,6 +390,7 @@ int	main(int ac, char **av)
 	test_memcpy();
 	test_memmove();
 	test_strdup();
+	test_strchr(ac, av);
 	test_strrchr(ac, av);
 	test_tolower();
 	test_toupper();

@@ -6,7 +6,7 @@
 #    By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/05 16:43:54 by ltourbe           #+#    #+#              #
-#    Updated: 2025/11/11 17:42:59 by ltourbe          ###   ########.fr        #
+#    Updated: 2025/11/11 19:28:57 by ltourbe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS		= ft_isascii.c \
 		  ft_memmove.c \
 		  ft_memcpy.c \
 		  ft_strdup.c \
+		  ft_strchr.c \
 		  ft_strrchr.c \
 		  ft_tolower.c \
 		  ft_toupper.c \
