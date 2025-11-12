@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:56:48 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/11 19:28:33 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/12 11:06:44 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <unistd.h>
-
+/*
 void   test_isprint(int ac, char **av)
 {
         int     i;
@@ -119,16 +119,16 @@ void    test_strlcpy(void)
         printf("%zu\n", strlcpy(dest2, src, 5));
         printf("%s\n", dest2);
 }
-
+*/
 void   test_strncmp(int ac, char **av)
 {
         if (ac == 3)
         {
-                printf("%d\n", ft_strncmp(av[1], av[2], 5));
-                printf("%d\n", strncmp(av[1], av[2], 5));
+                printf("%d\n", ft_strncmp(av[1], av[2], '2'));
+                printf("%d\n", strncmp(av[1], av[2], '2'));
         }
 }
-
+/*
 void    test_atoi(int ac, char **av)
 {
         (void) ac;
@@ -367,12 +367,12 @@ void	test_putnbr_fd(int ac, char **av)
         (void) ac;
         ft_putnbr_fd(atoi(av[1]), atoi(av[2]));
 }
-
+*/
 int	main(int ac, char **av)
 {
 	(void) ac;
 	(void) av;
-	test_isprint(ac, av);
+/*	test_isprint(ac, av);
 	test_isdigit(ac, av);
 	test_isalpha(ac, av);
 	test_isalnum(ac, av);
@@ -380,8 +380,8 @@ int	main(int ac, char **av)
 	test_strlen(ac, av);
 	test_strlcat();
 	test_strlcpy();
-	test_strncmp(ac, av);
-	test_atoi(ac, av);
+*/	test_strncmp(ac, av);
+/*	test_atoi(ac, av);
 	test_bzero();
 	test_memset();
 	test_calloc();
@@ -406,4 +406,4 @@ int	main(int ac, char **av)
 	test_putstr_fd(ac, av);
 	test_putendl_fd(ac, av);
 	test_putnbr_fd(ac, av);
-}
+*/}
