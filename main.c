@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:56:48 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/12 11:06:44 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/12 13:07:11 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,16 +119,14 @@ void    test_strlcpy(void)
         printf("%zu\n", strlcpy(dest2, src, 5));
         printf("%s\n", dest2);
 }
-*/
+
 void   test_strncmp(int ac, char **av)
 {
-        if (ac == 3)
-        {
-                printf("%d\n", ft_strncmp(av[1], av[2], '2'));
-                printf("%d\n", strncmp(av[1], av[2], '2'));
-        }
+	(void) ac;
+	printf("%d\n", ft_strncmp(av[1], av[2], 4));
+	printf("%d\n", strncmp(av[1], av[2], 4));
 }
-/*
+
 void    test_atoi(int ac, char **av)
 {
         (void) ac;
@@ -218,18 +216,25 @@ void     test_memcpy(void)
         memcpy(target1, source1, strlen(source));
         printf("%s\n", target1);
 }
-
+*/
 void	test_memmove(void)
 {
-        char    src[] = "ABCDEFGH";
-        char    src1[] = "ABCDEFGH";
+        char    src[] = "123456789";
+        char	src1[] = "123456789";
+        char	srcc[] = "abcdef";
+	char	srcc1[] = "abcdef";
 
-        ft_memmove(src + 2, src, 5);
-        printf("%s\n", src);
+	ft_memmove(src + 2, src, 5);
+        printf("Test 3 : %s\n", src);
         memmove(src1 + 2, src1, 5);
-        printf("%s\n", src1);
-}
+        printf("Test 3 : %s\n", src1);
+	ft_memmove(srcc, srcc + 2, 4);
+        printf("Test 4 : %s\n", srcc);
+        memmove(srcc1, srcc1 + 2, 4);
+        printf("Test 4 : %s\n", srcc1);
 
+}
+/*
 void	test_strdup(void)
 {
    char *string = "this is a copy";
@@ -380,16 +385,16 @@ int	main(int ac, char **av)
 	test_strlen(ac, av);
 	test_strlcat();
 	test_strlcpy();
-*/	test_strncmp(ac, av);
-/*	test_atoi(ac, av);
+	test_strncmp(ac, av);
+	test_atoi(ac, av);
 	test_bzero();
 	test_memset();
 	test_calloc();
 	test_memchr();
 	test_memcmp();
 	test_memcpy();
-	test_memmove();
-	test_strdup();
+*/	test_memmove();
+/*	test_strdup();
 	test_strchr(ac, av);
 	test_strrchr(ac, av);
 	test_tolower();
