@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:56:48 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/12 13:07:11 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/12 16:29:03 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,14 +98,15 @@ void	test_strlen(int ac, char **av)
 
 void	test_strlcat(void)
 {
-	const char src[] = "bonjour";
-	char dest[20] = "oui";
-	char dest2[20] = "oui";
+	char	dest[6] = "Hello";
+	char	dest1[6] = "Hello";
+	char	src[] = "World";
+	char	src1[] = "World";
+	size_t	r = ft_strlcat(dest, src, 10);
+	size_t	r1 = strlcat(dest1, src1, 10);
 
-	printf("%zu\n", ft_strlcat(dest, src, 8));
-	printf("%s\n", dest); 
-	printf("%zu\n", strlcat(dest2, src, 8));
-	printf("%s\n", dest2);
+	printf("dest = \"%s\", return = %zu\n", dest, r);
+	printf("dest = \"%s\", return = %zu\n", dest1, r1);
 }
 
 void    test_strlcpy(void)
@@ -216,7 +217,7 @@ void     test_memcpy(void)
         memcpy(target1, source1, strlen(source));
         printf("%s\n", target1);
 }
-*/
+
 void	test_memmove(void)
 {
         char    src[] = "123456789";
@@ -234,18 +235,18 @@ void	test_memmove(void)
         printf("Test 4 : %s\n", srcc1);
 
 }
-/*
+
 void	test_strdup(void)
 {
-   char *string = "this is a copy";
-   char *newstr;
-   char *string1 = "this is a copy";
-   char *newstr1;
+   char *string = "a\nb\tc";
+   char *newstr = ft_strdup(string);
+   char *string1 = "a\nb\tc";
+   char *newstr1 = strdup(string1);
 
-   newstr = ft_strdup(string);
-   printf("The new string is: %s\n", newstr);
-   newstr1 = strdup(string1);
-   printf("The new string is: %s\n", newstr1);
+   printf("dup = \"%s\"\n", newstr);
+   printf("dup = \"%s\"\n", newstr1);
+   free(newstr);
+   free(newstr1);
 }
 
 void	test_strchr(int ac, char **av)
@@ -296,8 +297,10 @@ void    test_strnstr(int ac, char **av)
 
 void	test_substr(void)
 {
-        char s[] = "Bonjour";
-        printf("%s\n", ft_substr(s, 3, 10));
+        char *s = "Hello, world!";
+        char *sub = ft_substr(s, 7, 5);
+	printf("sub = \"%s\"\n", sub);
+	free(sub);
 }
 
 void     test_strjoin(int ac, char **av)
@@ -311,7 +314,7 @@ void	test_strtrim(int ac, char **av)
         (void) ac; 
         printf("%s\n", ft_strtrim(av[1], av[2]));
 }
-
+*/
 void	test_split(int ac, char **av)
 {
         char    **result;
@@ -320,13 +323,14 @@ void	test_split(int ac, char **av)
         (void) ac; 
         result = ft_split(av[1], *av[2]);
         i = 0;
-        while (result[i])
+        while (result && result[i])
         {
-                printf("%s\n", result[i]);
+               // printf("%s\n", result[i]);
+                printf("Dernier = %p\n", result[2]);
                 i++;
         }
 }
-
+/*
 void	test_itoa(int ac, char **av)
 {
         (void) ac; 
@@ -393,8 +397,8 @@ int	main(int ac, char **av)
 	test_memchr();
 	test_memcmp();
 	test_memcpy();
-*/	test_memmove();
-/*	test_strdup();
+	test_memmove();
+	test_strdup();
 	test_strchr(ac, av);
 	test_strrchr(ac, av);
 	test_tolower();
@@ -403,8 +407,8 @@ int	main(int ac, char **av)
 	test_substr();
 	test_strjoin(ac, av);
 	test_strtrim(ac, av);
-	test_split(ac, av);
-	test_itoa(ac, av);
+*/	test_split(ac, av);
+/*	test_itoa(ac, av);
 	test_strmapi(ac, av);
 	test_striteri(ac, av);
 	test_putchar_fd(ac, av);
