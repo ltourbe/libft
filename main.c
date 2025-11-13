@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:56:48 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/13 15:34:59 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/13 18:11:29 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,7 +184,7 @@ void     test_calloc(void)
         }   
         free(tab);
 }
-*/
+
 void	test_memchr(void)
 {
         char    str[] = "Hello world";
@@ -193,7 +193,7 @@ void	test_memchr(void)
         printf("%s\n", (char *)ft_memchr(str, 'o', 11));
         printf("%s\n", (char *)memchr(str1, 'o', 11));
 }
-/*
+
 void     test_memcmp(void)
 {
         char    s1[] = "Bonjour";
@@ -308,13 +308,13 @@ void     test_strjoin(int ac, char **av)
         (void) ac;
         printf("%s\n", ft_strjoin(av[1], av[2]));
 }
-
+*/
 void	test_strtrim(int ac, char **av)
 {
         (void) ac; 
         printf("%s\n", ft_strtrim(av[1], av[2]));
 }
-
+/*
 void	test_split(int ac, char **av)
 {
         char    **result;
@@ -378,8 +378,8 @@ void	test_putnbr_fd(int ac, char **av)
 */
 int	main(int ac, char **av)
 {
-	(void) ac;
-	(void) av;
+//	(void) ac;
+//	(void) av;
 /*	test_isprint(ac, av);
 	test_isdigit(ac, av);
 	test_isalpha(ac, av);
@@ -393,8 +393,8 @@ int	main(int ac, char **av)
 	test_bzero();
 	test_memset();
 	test_calloc();
-*/	test_memchr();
-/*	test_memcmp();
+	test_memchr();
+	test_memcmp();
 	test_memcpy();
 	test_memmove();
 	test_strdup();
@@ -405,8 +405,8 @@ int	main(int ac, char **av)
 	test_strnstr(ac, av);
 	test_substr();
 	test_strjoin(ac, av);
-	test_strtrim(ac, av);
-	test_split(ac, av);
+*/	test_strtrim(ac, av);
+/*	test_split(ac, av);
 	test_itoa(ac, av);
 	test_strmapi(ac, av);
 	test_striteri(ac, av);

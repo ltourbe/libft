@@ -6,16 +6,13 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:49:34 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/10 18:31:45 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/13 17:18:55 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	unsigned char	i;
-
-	i = c;
-	if (i >= 'A' && i <= 'Z')
-		return (i + 32);
-	return (i);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
