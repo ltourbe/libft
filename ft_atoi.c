@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:42:29 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/11 19:31:59 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/13 16:14:07 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_space(char c)
 		return (0);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
 	int	i;
 	int	sign;
@@ -27,19 +27,19 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (ft_space(str[i]) == 1)
+	while (ft_space(nptr[i]) == 1)
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (str[i] == '-')
+		if (nptr[i] == '-')
 			sign = -1;
-		else if (str[i] == '+')
+		else if (nptr[i] == '+')
 			sign = 1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		result = result * 10 + str[i] - '0';
+		result = result * 10 + nptr[i] - '0';
 		i++;
 	}
 	return (result * sign);

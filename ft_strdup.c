@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:27:45 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/12 15:13:36 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/13 16:23:09 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 char	*ft_strdup(const char *s)
 {
 	char	*s2;
-	size_t		i;
-	size_t		len;
+	size_t	i;
+	size_t	len;
 
 	len = ft_strlen(s) + 1;
 	s2 = malloc(len * sizeof(char));

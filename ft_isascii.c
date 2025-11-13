@@ -6,11 +6,9 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:34:55 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/04 16:54:26 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/13 15:59:49 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include <stdio.h>
 
 int	ft_isascii(int c)
 {
@@ -18,18 +16,3 @@ int	ft_isascii(int c)
 		return (1);
 	return (0);
 }
-
-/*int	main(int ac, char **av)
-{
-	int	i;
-	i = 0;
-	if (ac == 2)
-	{
-		while (av[1][i] != '\0')
-		{
-			printf("%d\n", ft_isascii(av[1][i]));
-			i++;
-		}
-	}
-	return (0);
-}*/

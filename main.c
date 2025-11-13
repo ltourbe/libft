@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:56:48 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/12 16:29:03 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/13 15:34:59 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,16 +184,16 @@ void     test_calloc(void)
         }   
         free(tab);
 }
-
+*/
 void	test_memchr(void)
 {
-        char    str[] = "Bonjour";
-        char    str1[] = "Bonjour";
+        char    str[] = "Hello world";
+        char    str1[] = "Hello world";
 
-        printf("%s\n", (char *)ft_memchr(str, 'j', 7));
-        printf("%s\n", (char *)memchr(str1, 'j', 7));
+        printf("%s\n", (char *)ft_memchr(str, 'o', 11));
+        printf("%s\n", (char *)memchr(str1, 'o', 11));
 }
-
+/*
 void     test_memcmp(void)
 {
         char    s1[] = "Bonjour";
@@ -207,15 +207,15 @@ void     test_memcmp(void)
 
 void     test_memcpy(void)
 {
-        char source[] = "This is the source string";
-        char target[] = "This is the target string";
-        char source1[] = "This is the source string";
-        char target1[] = "This is the target string";
-
-        ft_memcpy(target, source, strlen(source));
-        printf("%s\n", target);
-        memcpy(target1, source1, strlen(source));
-        printf("%s\n", target1);
+        char source[] = "abc";
+	char target[3] = "xyz";
+        char source1[] = "abc";
+        char target1[3] = "xyz";
+	
+	ft_memcpy(target, source, 3);
+	printf("target = \"%s\"\n", target);
+        memcpy(target1, source1, 3);
+	printf("target = \"%s\"\n", target1);
 }
 
 void	test_memmove(void)
@@ -314,7 +314,7 @@ void	test_strtrim(int ac, char **av)
         (void) ac; 
         printf("%s\n", ft_strtrim(av[1], av[2]));
 }
-*/
+
 void	test_split(int ac, char **av)
 {
         char    **result;
@@ -325,12 +325,11 @@ void	test_split(int ac, char **av)
         i = 0;
         while (result && result[i])
         {
-               // printf("%s\n", result[i]);
-                printf("Dernier = %p\n", result[2]);
-                i++;
+               printf("%s\n", result[i]);
+	       i++;
         }
 }
-/*
+
 void	test_itoa(int ac, char **av)
 {
         (void) ac; 
@@ -394,8 +393,8 @@ int	main(int ac, char **av)
 	test_bzero();
 	test_memset();
 	test_calloc();
-	test_memchr();
-	test_memcmp();
+*/	test_memchr();
+/*	test_memcmp();
 	test_memcpy();
 	test_memmove();
 	test_strdup();
@@ -407,8 +406,8 @@ int	main(int ac, char **av)
 	test_substr();
 	test_strjoin(ac, av);
 	test_strtrim(ac, av);
-*/	test_split(ac, av);
-/*	test_itoa(ac, av);
+	test_split(ac, av);
+	test_itoa(ac, av);
 	test_strmapi(ac, av);
 	test_striteri(ac, av);
 	test_putchar_fd(ac, av);

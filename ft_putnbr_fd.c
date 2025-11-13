@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 17:22:57 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/11 17:43:47 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/13 15:03:50 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (filou < 0)
 	{
 		filou = -filou;
-		write(1, "-", 1);
+		write(fd, "-", 1);
 	}
 	if (filou < 10)
 	{

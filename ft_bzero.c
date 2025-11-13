@@ -6,12 +6,10 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:09:55 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/10 16:09:58 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/13 16:29:39 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
