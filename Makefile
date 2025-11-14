@@ -6,7 +6,7 @@
 #    By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/05 16:43:54 by ltourbe           #+#    #+#              #
-#    Updated: 2025/11/11 19:28:57 by ltourbe          ###   ########.fr        #
+#    Updated: 2025/11/14 17:31:16 by ltourbe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,20 @@ NAME		= libft.a
 
 all:		$(NAME)
 
+BONUS_SRCS	= ft_lstnew.c \
+		  ft_lstadd_front.c \
+		  ft_lstsize.c \
+		  ft_lstlast.c \
+		  ft_lstadd_back.c \
+		  ft_lstdelone.c \
+		  ft_lstclear.c \
+		  ft_lstiter.c
+
+BONUS_OBJS 	= $(patsubst %.c, %.o, $(BONUS_SRCS))
+
+bonus:	$(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+
 $(NAME):	$(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
@@ -61,7 +75,7 @@ $(NAME):	$(OBJS)
 	$(CC) $(CFLAGS) -c $^
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean:		clean
 	rm -f $(NAME)

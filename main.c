@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:56:48 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/13 18:11:29 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/14 17:30:58 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -308,13 +308,13 @@ void     test_strjoin(int ac, char **av)
         (void) ac;
         printf("%s\n", ft_strjoin(av[1], av[2]));
 }
-*/
+
 void	test_strtrim(int ac, char **av)
 {
         (void) ac; 
         printf("%s\n", ft_strtrim(av[1], av[2]));
 }
-/*
+
 void	test_split(int ac, char **av)
 {
         char    **result;
@@ -375,6 +375,106 @@ void	test_putnbr_fd(int ac, char **av)
         (void) ac;
         ft_putnbr_fd(atoi(av[1]), atoi(av[2]));
 }
+
+void     test_lstnew(void)
+{
+        char *s = "Hello world !";
+        t_list *node = ft_lstnew(s);
+
+        if (!node)
+                printf("Erreur : ft_lstnew a renvoy2 NULL\n");
+        printf("Contenu : %s\n", (char *)node->content);
+        printf("Next : %p\n", (char *)node->next);
+}
+
+void    test_lstadd_front(void)
+{
+        t_list *lst = NULL;
+        t_list *n1 = ft_lstnew("B");
+        t_list *n2 = ft_lstnew("A");
+
+        lst = n1;
+        printf("lst->content = %s\n", (char *)lst->content);
+        ft_lstadd_front(&lst, n2);
+        printf("lst->content = %s\n", (char*)lst->content);
+        printf("lst->next->content = %s\n", (char *)lst->next->content);
+}
+
+void    test_lstsize(void)
+{
+        t_list *a = ft_lstnew("A");
+        t_list *b = ft_lstnew("B");
+        t_list *c = ft_lstnew("C");
+
+        a->next = b;
+        b->next = c;
+        printf("Taille de la liste : %d\n", ft_lstsize(a));
+}
+
+void     test_lstlast(void)
+{
+        t_list *a = ft_lstnew("A");
+        t_list *b = ft_lstnew("B");
+        t_list *c = ft_lstnew("C");
+
+        a->next = b;
+        b->next = c;
+        t_list  *last = ft_lstlast(a);
+        printf("Dernier element : %s\n", (char *)last->content);
+}
+
+void     test_lstadd_back(void)
+{
+        t_list  *lst = ft_lstnew("X");
+        t_list  *tmp = lst;
+
+        t_list *a = ft_lstnew("A");
+        t_list *b = ft_lstnew("B");
+        t_list *c = ft_lstnew("C");
+        ft_lstadd_back(&lst, a);
+        ft_lstadd_back(&lst, b);
+        ft_lstadd_back(&lst, c);
+        while (tmp)
+        {
+                printf("%s\n", (char *)tmp->content);
+                tmp = tmp->next;
+        }
+}
+
+void    test_lstdelone(void)
+{
+        t_list *node = ft_lstnew(ft_strdup("Hello world !"));
+
+        printf("Avant delete : %s\n", (char *)node->content);
+
+        ft_lstdelone(node, del);
+}
+
+void    test_lstclear(void)
+{
+        t_list  *lst = ft_lstnew(ft_strdup("A"));
+        lst->next = ft_lstnew(ft_strdup("B"));
+        lst->next->next = ft_lstnew(ft_strdup("C"));
+
+        ft_lstclear(&lst, del);
+
+        if (!lst)
+                printf("Liste completement supprimee");
+}
+
+void    test_lstiter(void)
+{
+        t_list *lst = ft_lstnew(ft_strdup("a"));
+        lst->next = ft_lstnew(ft_strdup("b"));
+        lst->next->next = ft_lstnew(ft_strdup("c"));
+
+        printf("Avant ft_lstiter :\n");
+        ft_lstiter(lst, print_content);
+
+        ft_lstiter(lst, uppercase);
+        printf("Apres ft_lstiter :\n");
+        ft_lstiter(lst, print_content);
+}
 */
 int	main(int ac, char **av)
 {
@@ -405,8 +505,8 @@ int	main(int ac, char **av)
 	test_strnstr(ac, av);
 	test_substr();
 	test_strjoin(ac, av);
-*/	test_strtrim(ac, av);
-/*	test_split(ac, av);
+	test_strtrim(ac, av);
+	test_split(ac, av);
 	test_itoa(ac, av);
 	test_strmapi(ac, av);
 	test_striteri(ac, av);
@@ -414,4 +514,12 @@ int	main(int ac, char **av)
 	test_putstr_fd(ac, av);
 	test_putendl_fd(ac, av);
 	test_putnbr_fd(ac, av);
+	test_lstnew();
+	test_lstadd_front();
+	test_lstsize();
+	test_lstlast();
+	test_lstadd_back();
+	test_lstdelone();
+	test_lstclear();
+	test_lstiter();
 */}
