@@ -6,7 +6,7 @@
 /*   By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:48:58 by ltourbe           #+#    #+#             */
-/*   Updated: 2025/11/13 14:41:29 by ltourbe          ###   ########.fr       */
+/*   Updated: 2025/11/14 12:18:59 by ltourbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,23 @@ char	*word_dup(char const *s, char c)
 	return (str);
 }
 
-char	**ft_split(char const *s, char c)
+void	free_everything(char **split, int word)
 {
-	int		total;
-	char	**split;
-	int		i;
-	int		j;
+	int	i;
 
-	total = count_words(s, c) + 1;
-	split = malloc(total * sizeof(char *));
-	if (split == NULL)
-		return (NULL);
 	i = 0;
+	while (i < word)
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}
+
+char	**ft_splitsplit(char const *s, char **split, int i, char c)
+{
+	int	j;
+
 	j = 0;
 	while (s[i] != '\0')
 	{
@@ -80,6 +85,11 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != '\0')
 		{
 			split[j] = word_dup(&s[i], c);
+			if (split[j] == NULL)
+			{
+				free_everything(split, j);
+				return (NULL);
+			}
 			j++;
 			while (s[i] && s[i] != c)
 				i++;
@@ -87,4 +97,18 @@ char	**ft_split(char const *s, char c)
 	}
 	split[j] = NULL;
 	return (split);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		total;
+	char	**split;
+	int		i;
+
+	total = count_words(s, c) + 1;
+	split = malloc(total * sizeof(char *));
+	if (split == NULL)
+		return (NULL);
+	i = 0;
+	return (ft_splitsplit(s, split, i, c));
 }
