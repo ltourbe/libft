@@ -6,7 +6,7 @@
 #    By: ltourbe <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/05 16:43:54 by ltourbe           #+#    #+#              #
-#    Updated: 2025/11/14 17:31:16 by ltourbe          ###   ########.fr        #
+#    Updated: 2025/11/14 18:39:29 by ltourbe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,8 @@ BONUS_SRCS	= ft_lstnew.c \
 		  ft_lstadd_back.c \
 		  ft_lstdelone.c \
 		  ft_lstclear.c \
-		  ft_lstiter.c
+		  ft_lstiter.c \
+		  ft_lstmap.c
 
 BONUS_OBJS 	= $(patsubst %.c, %.o, $(BONUS_SRCS))
 
